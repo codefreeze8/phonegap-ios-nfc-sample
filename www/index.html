@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="description" content="">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/font-awesome.min.css">
+        <style>
+            /* prevents iOS bounce, scroll within the DIVs */
+            BODY { margin: 0px; padding:0px; position: fixed; overflow: hidden; }
+            .content-wrapper { padding: 10px; width: 100vw; height: 100vh; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
+        </style>
+        <title>NFC Test</title>
+    </head>
+    <body class="app">
+        <div id='top' class="content-wrapper">
+        <form class="form-horizontal" onSubmit='return false;'>
+            <div id='message' class="alert alert-info">
+                <p>
+                Welcome! This is the test NFC page. Tap the 'Scan' button to test on iOS; or hold a card on the NFC reader on android.
+                </p>
+            </div>
+            <div class="form-group row">
+                <label class="col-3 col-form-label text-right">Code</label>
+                <div class="col-6">
+                    Tag
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 text-center">
+                    <button id='loginBtn' class="btn btn-primary" onClick="notifyNFC()">Scan NFC</button>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 text-center">
+                    <button id='loginBtn' class="btn btn-danger" onClick="nfcWrite()">Write NFC</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="assets/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="assets/app.js"></script>
+    </body>
+</html>
